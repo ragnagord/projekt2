@@ -37,6 +37,10 @@ angular.module('myApp',["ui.router", "myApp.factoryBookmarksService","myApp.fact
             BookmarksService.removeBookmarksForCategory($scope.currentCategory);
         }
         
+        $scope.addBookmark = function(bookmark){
+            BookmarksService.addBookmark(bookmark);
+        }
+        
         
         $scope.currentCategory = null;
         $scope.currentBookmark = null;

@@ -11,7 +11,13 @@ angular.module("myApp.factoryBookmarksService", ["firebase"])
         return bookmarks;
     };
     
+    var addBookmark = function(bookmark){
+        bookmark.id = bookmarks.length;
+        bookmarks.$add(bookmark); 
+    };
+    
     return{
         getBookmarks: getBookmarks,
+        addBookmark: addBookmark,
     }
     })

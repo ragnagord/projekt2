@@ -72,6 +72,38 @@
     </div>
     </div>
     
+    <div id="anchor3" class="jumbotron" style="background-color: #FFFFFF">
+    <div class="container">
+    <div class="row">
+    <div ng-if="shouldShowCreating()">
+    <h4>Dodaj stronę</h4>
+    <form ng-submit="addBookmark(bookmark)" role="form">
+             <div class="form-group">
+                <label for="newBookmarkTitle">Nazwa</label>
+                <input class="form-control" type="text" id="newBookmarkTitle" ng-model="bookmark.title">
+            </div>
+            <div class="form-group">
+                <label for="newBookmarkURL">URL</label>
+                <input class="form-control" type="text" id="newBookmarkURL" ng-model="bookmark.url">
+            </div>
+            <div class="form-group">
+                <label for="newBookmarkDescription">Opis</label>
+                <input class="form-control" type="text" id="newBookmarkDescription" ng-model="bookmark.description">
+            </div>
+            <div class="form-group">
+                <label for="newBookmarkCategory">Kategoria</label>
+                <select id = "newBookmarkCategory" class="form-control" ng-model="bookmark.categoryname"
+                     ng-options="category.name as category.name for category in categories">
+                </select>
+            </div>
+            <button class="btn btn-default" type="submit">Utwórz</button>
+    </form>
+    </div>
+
+
+    </div>
+    </div>
+    </div>
 
 
 
