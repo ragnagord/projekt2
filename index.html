@@ -49,13 +49,27 @@
                </li>
         </ul>
         <br><br><br><br>
-     </div>
-    
-    
+         </div>
+    <div class="col-sm-4" >
+        <h3>Strony</h3>
+    <button type="button" class="btn btn-danger btn-block" ng-click="removeBookmark()">Usuń stronę</button>
+    <br>
+    <ul class="nav nav-pills nav-stacked" role="tablist">
+           <li ng-repeat="bookmark in bookmarks | filter:currentCategory.name" ng-class="{'active':isCurrentBookmark(bookmark)}" style=" border: 1px solid; border-radius: 5px;">
+                <a ng-click="setCurrentBookmark(bookmark)" ui-sref="bookmark"> {{bookmark.title}} </a>
+           </li>
+    </ul>
+    <br><br><br><br>
     </div>
-</div>
-
-
+    
+    <div class="col-sm-4">
+        <h3>Opis strony</h3>
+        <div ui-view></div>
+    <br><br>
+    </div>
+    </div>
+    </div>
+    
     <div id="anchor2" class="jumbotron" style="background-color: #18BC9C; border-color: #18BC9C;">
     <div class="container">
     <div class="row" style="color: #F5F5DC">
