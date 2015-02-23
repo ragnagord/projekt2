@@ -1,10 +1,21 @@
 angular.module('myApp',[])
 
-
+.config(function($stateProvider, $urlRouterProvider) {
+          $stateProvider
+            .state('bookmark', {
+                url: '/bookmark',
+                templateUrl: 'templates/bookmark.html'
+            })
+          $urlRouterProvider.otherwise('/bookmark');
+    })
+    
 .constant('FIREBASE_URI', 'https://projekt2-pokrywka.firebaseio.com/')
 
 .controller('MainCtrl', function($anchorScroll, $location, $scope){
        
+       
+
+    
         $scope.gotoAnchor = function(x) {
           var newHash = 'anchor' + x;
           if ($location.hash() !== newHash) {
@@ -22,5 +33,8 @@ angular.module('myApp',[])
         $scope.isCreatingCategory = true;
         $scope.isEditingCategory = false;
         
-        
+         function shouldShowBookmark(){
+            return $scope.currentBookmark !== null;
+        }
+        $scope.shouldShowBookmark = shouldShowBookmark;
 })
