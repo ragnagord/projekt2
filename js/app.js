@@ -32,6 +32,11 @@ angular.module('myApp',["ui.router", "myApp.factoryBookmarksService","myApp.fact
             CategoriesService.addCategory(category);
         }
         
+         $scope.removeCategory = function(){
+            CategoriesService.removeCategory($scope.currentCategory.name);
+            BookmarksService.removeBookmarksForCategory($scope.currentCategory);
+        }
+        
         
         $scope.currentCategory = null;
         $scope.currentBookmark = null;

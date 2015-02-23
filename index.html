@@ -29,6 +29,33 @@
   </div>
 </nav>    
 
+<div id="anchor1" class="jumbotron" style="background-color: #18BC9C; border-color: #18BC9C;">
+        <div class="container" text-center>
+            <h1 style="font-family: 'Courier New'; color: #2c3e50">Ciekawe strony</h1>
+        </div>
+    </div>
+
+<div class="container">
+    <div class="row">
+     <div class="col-sm-4">
+         <h3>Kategorie</h3>
+          <button type="button" class="btn btn-danger btn-block" ng-click="removeCategory()">Usuń kategorię</button>
+         <br>
+         <ul class="nav nav-pills nav-stacked" role="tablist">
+               <li ng-repeat="category in categories" ng-class="{'active':isCurrentCategory(category)}" style=" border: 1px solid; border-radius: 5px;">
+                   <a ng-click="setCurrentCategory(category)">
+                   {{category.name}}
+                   </a>
+               </li>
+        </ul>
+        <br><br><br><br>
+     </div>
+    
+    
+    </div>
+</div>
+
+
     <div id="anchor2" class="jumbotron" style="background-color: #18BC9C; border-color: #18BC9C;">
     <div class="container">
     <div class="row" style="color: #F5F5DC">
