@@ -8,9 +8,13 @@ angular.module("myApp.factoryCategoriesService", ["firebase"])
     var getCategories = function(){
         return categories;
     };
+    var addCategory = function(category){
+        category.id = categories.length;
+        categories.$add(category); 
+    };
     
         return{
         getCategories: getCategories,
-
+        addCategory: addCategory,
     }
 })

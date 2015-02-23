@@ -1,4 +1,4 @@
-angular.module('myApp',[])
+angular.module('myApp',["ui.router", "myApp.factoryBookmarksService","myApp.factoryCategoriesService"])
 
 .config(function($stateProvider, $urlRouterProvider) {
           $stateProvider
@@ -11,7 +11,7 @@ angular.module('myApp',[])
     
 .constant('FIREBASE_URI', 'https://projekt2-pokrywka.firebaseio.com/')
 
-.controller('MainCtrl', function($anchorScroll, $location, $scope){
+.controller('MainCtrl', function($anchorScroll, $location, $scope,  CategoriesService, BookmarksService){
        
        
 
@@ -24,6 +24,15 @@ angular.module('myApp',[])
             $anchorScroll();
           }
         }
+        
+        $scope.categories = CategoriesService.getCategories();
+        $scope.bookmarks = BookmarksService.getBookmarks();
+        
+        $scope.addCategory = function(category){
+            CategoriesService.addCategory(category);
+        }
+        
+        
         $scope.currentCategory = null;
         $scope.currentBookmark = null;
         $scope.editedBookmark = null;
