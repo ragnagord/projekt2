@@ -2,12 +2,33 @@
 <html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Ciekawe strony</title>
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/firebase/firebase.js"></script>
     <script type="text/javascript" src="bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/javascript.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
-<body>
-    
+<body ng-controller="MainCtrl"><script type="text/javascript"></script>
+ 
+   <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #2c3e50; border-color: #2c3e50;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="" ng-click="gotoAnchor(1)">Ciekawe strony internetowe</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="" ng-click="gotoAnchor(2)">Dodaj kategorię strony</a></li>
+        <li><a href="" ng-click="gotoAnchor(3)">Dodaj stronę</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>    
+
+
 </body>
 </html>
